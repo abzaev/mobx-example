@@ -1,6 +1,6 @@
 import { observable } from "mobx";
 
-export const createStore = () => {
+export const createFirstStore = () => {
   const store = observable({
     bugs: ['Centipede'],
 
@@ -17,4 +17,4 @@ export const createStore = () => {
   return store;
 };
 
-export type TStore = ReturnType<typeof createStore>;
+export type TFirstStore = ReturnType<typeof createFirstStore>;

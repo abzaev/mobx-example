@@ -2,7 +2,7 @@ import React from 'react';
 import { StoreContext } from '../store/context';
 
 const BugsForm = () => {
-  const store = React.useContext(StoreContext);
+  const store = React.useContext(StoreContext).firstStore;
   const [bug, setBug] = React.useState<string>("");
 
   return (

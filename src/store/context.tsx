@@ -1,10 +1,19 @@
 import * as React from "react";
-import { createStore, TStore } from "./store";
+import { createFirstStore, TFirstStore } from "./firstStore";
+import { createSecondStore, TSecondStore } from "./secondStore";
 
-export const StoreContext = React.createContext<TStore>({} as TStore);
+interface Store {
+  firstStore: TFirstStore
+  secondStore: TSecondStore
+}
+
+export const StoreContext = React.createContext<Store>({} as Store);
 
 const StoreProvider: React.FC = ({ children }) => {
-  const store = createStore();
+  const store = {
+    firstStore: createFirstStore(),
+    secondStore: createSecondStore(),
+  }
 
   return (
     <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
